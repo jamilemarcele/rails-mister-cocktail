@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+require 'json'
+
+puts "Cleaning database..."
+Ingredient.destroy_all
+
+puts "Starting seed 🌱"
+
+url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
+json = open(url).read
+objs = JSON.parse(json)
+objs["drinks"].each do |obj|
+  Ingredient.create(name: obj["strIngredient1"])
+end
+
+puts "Finished seeding file 😀"
