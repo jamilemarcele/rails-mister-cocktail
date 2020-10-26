@@ -1,12 +1,15 @@
-<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
-<div class="navbar-lewagon">
-  <div class="logo">
-    <%= link_to cocktails_path do %>
-      <i class="fas fa-cocktail"></i> Mr Cocktail
-      <% end %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!--  Left navigation-->
+  <%= link_to image_tag("logo-cocktail.png", alt: "Mr Cocktail", width: 50, height: 50), cocktails_path, class: "navbar-brand" %>
+  <%= link_to "Mr Cocktail", cocktails_path, class: "navbar-brand"%>
+  </a>
+  <!--  Right navigation-->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <form class="form-inline ml-auto mr-3">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
   </div>
-<!--  Right navigation-->
-  <div class="navbar-wagon-right">
-    <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary" %>
-  </div>
-</div>
+  <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary" %>
+</nav>
+
