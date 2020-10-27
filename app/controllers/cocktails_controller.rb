@@ -1,6 +1,17 @@
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
+    @query = params[:query]
+    # TODO: check code query
+    if @query
+      @cocktails = Cocktail.where("LOWER(name) LIKE '%#{@query.downcase}%'")
+      if @cocktails.count.zero?
+        @no_cocktails_found = "No cocktails found 🙁 Check all our cocktails below"
+        @cocktails = Cocktail.all
+      end
+    else
+      @cocktails = Cocktail.all
+    end
   end
 
   def show
@@ -20,10 +31,16 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.destroy
+
+    redirect_to root_path
+  end
+
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
-
 end
