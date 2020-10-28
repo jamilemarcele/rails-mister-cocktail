@@ -1,7 +1,5 @@
-<%= simple_form_for [ @cocktail, @dose ] do |f| %>
-  <%= f.input :description, label: "Amount", placeholder: "9 cl, 6 leaves, ..." %>
-  <%= f.association :ingredient %>
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+<%= render 'doses/form' %>
 
 <%= link_to "All cocktails", root_path %>
+
+<!--TODO: delete -->

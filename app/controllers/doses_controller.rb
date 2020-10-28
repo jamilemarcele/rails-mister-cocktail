@@ -1,4 +1,5 @@
 class DosesController < ApplicationController
+  # TODO: delete new method
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new
