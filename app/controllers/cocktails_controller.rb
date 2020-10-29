@@ -1,6 +1,7 @@
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
+
     @query = params[:query]
     # TODO: check code query
     if @query
