@@ -1,5 +1,5 @@
 <%= simple_form_for [ @cocktail, @dose ], html: { class: "dose-form"} do |f| %>
-  <%= f.input :description, label: "Amount", placeholder: "9 cl, 6 leaves, ..." %>
+  <%= f.input :description, placeholder: "10 ml, 6 leaves..." %>
   <%= f.association :ingredient %>
   <%= f.submit class: 'btn btn-dark' %>
 <% end %>
