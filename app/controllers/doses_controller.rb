@@ -2,6 +2,7 @@ class DosesController < ApplicationController
 
   def create
     @dose = Dose.new(dose_params)
+    # we need `cocktail_id` to associate dose with corresponding cocktail
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose.cocktail = @cocktail
 
