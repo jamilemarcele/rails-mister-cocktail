@@ -4,11 +4,24 @@
   border-radius: 2px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
 }
-.card-header {
-  height: 250px;
+.card-img {
+  display: flex;
   background-position: center;
   background-size: cover;
+  color: #eee;
+  //text-align: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  height: 250px;
 }
-.card-body {
-  padding: 24px;
+.cocktail-card-text {
+  margin: 0 auto;
+}
+
+.cocktail-card-text a {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    font-weight: bold;
+  }
 }
