@@ -1,8 +1,10 @@
-<div class="banner index-banner" s>
-
+<div class="home-banner" style="background-image: url('https://images.unsplash.com/photo-1473949103155-d89f3aa93cf1?ixlib=rb-1.2.1&w=1050')">
+  <div class="banner-text">
+    <h1>Mr Happy Hour</h1>
+  </div>
 </div>
 
-<h1 class="mb-3 mt-3">All Cocktails</h1>
+<h2 class="mb-3 mt-3">All Cocktails</h2>
 
 <p> <%= @no_cocktails_found %></p>
 
@@ -11,7 +13,7 @@
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card text-center">
-          <div class="card-header" style="background-image: url('<%= cl_image_path cocktail.photo.key, crop: :fill %>')">
+          <div class="card-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, crop: :fill %>')">
           </div>
           <div class="card-body">
             <%= link_to cocktail.name, cocktail_path(cocktail) %>
@@ -21,3 +23,7 @@
     <% end %>
   </div>
 </div>
+
+
+
+<!--<div class="home-banner" style="background-image: url('https://images.unsplash.com/photo-1562860352-92c96bac9c44?ixlib=rb-1.2.1&w=1050')">-->
