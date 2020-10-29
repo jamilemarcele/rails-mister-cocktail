@@ -1,11 +1,12 @@
 .banner {
-  background-size: cover;
-  background-position: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
+  background-position: center;
+  background-size: cover;
+  height: 280px;
   color: #eee;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
 }
 
 .home-banner {
