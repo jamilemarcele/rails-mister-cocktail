@@ -7,12 +7,13 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.cocktail = @review
+    @review.cocktail = @cocktail
+    @dose = Dose.new
 
     if @review.save
       redirect_to cocktail_path(@cocktail)
     else
-      render :new
+      render template: 'cocktails/show'
     end
 
   end
@@ -25,6 +26,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:content, :rating, :name)
+    params.require(:review).permit(:content, :rating, :name, :cocktail_id)
   end
 end

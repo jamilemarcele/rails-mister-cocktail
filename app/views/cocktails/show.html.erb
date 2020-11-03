@@ -3,8 +3,8 @@
 </div>
 
 <div class="cocktail-container">
-<!--  <div class="row ">-->
-    <div class="show-recipe col-12 col-lg-4">
+  <div class="row ">
+    <div class="text-left col-12 col-lg-8 mt-4">
         <h3>Recipe</h3>
       <ul>
         <% @cocktail.doses.each do |dose|%>
@@ -17,17 +17,35 @@
           </li>
         <% end %>
       </ul>
-
     </div>
-    <div class="col-12 col-lg-4">
-      <h4 style="text-align: left">Add an ingredient</h4>
+
+    <div class="col-12 col-lg-4 mt-4 mb-4">
+      <h4 class="text-left">Add an ingredient</h4>
       <div class="dose-form">
         <p>
           <%= render 'doses/form' %>
         </p>
       </div>
     </div>
-<!--  </div>-->
+
+    <div class="text-left col-12 col-lg-8 my-4">
+      <h3>Reviews:</h3>
+
+      <% if @cocktail.reviews.empty? %>
+        <p class="my-4">There are no reviews for this cocktail yet. Feel free to add one!</p>
+      <% end %>
+
+      <%  @cocktail.reviews.each do |review| %>
+        <div class="card-review mt-2">
+          <p class="p-1"> <%= review.name %> - Rating: <%= ("<i class=\"fas fa-star\"></i>" * review.rating).html_safe %></p>
+          <p class="p-1"> <%= review.content %> </p>
+        </div>
+      <% end %>
+      <br>
+      <h5 class="mt-4">Add a review</h5>
+      <%= render 'reviews/form' %>
+    </div>
+  </div>
 
 </div>
 
