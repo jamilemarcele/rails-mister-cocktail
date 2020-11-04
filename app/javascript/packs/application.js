@@ -15,12 +15,22 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
 import 'bootstrap';
 
+//JS for transparent and white banner
 import { loadDynamicBannerText } from '../components/banner';
 
 document.addEventListener('turbolinks:load', () => {
     // Call your JS functions here
     // [...]
     loadDynamicBannerText();
+});
+
+//JS for the home banner
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+
+document.addEventListener('turbolinks:load', () => {
+    // Call your JS functions here
+    initUpdateNavbarOnScroll();
 });

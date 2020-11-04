@@ -1,4 +1,6 @@
-<div class="banner cocktail-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo.key unless @cocktail.photo.blank? %>')">
+<%= render 'components/navbar-show' %>
+
+<div class="cocktail-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo.key unless @cocktail.photo.blank? %>')">
   <h1><%= @cocktail.name %></h1>
 </div>
 
@@ -49,12 +51,13 @@
 
 </div>
 
-
 <hr>
-<%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"}%>
-<%= link_to "All cocktails", root_path %> |
+<%#= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"}%>
+<%= link_to "All cocktails", root_path, class: "show-link"%>
 <%#= link_to "Add dose", new_cocktail_dose_path(@cocktail) %>
--
-<!--TODO: responsiveness of the recipe and add ingredient. ROW not working correctly->-->
 
+<!--TODO: responsiveness of the recipe and add ingredient. ROW not working correctly->-->
+<!--TODO: adjust all font sizes and font family ->-->
+<!--TODO: add sweet alert JS to delete action ->-->
+<!--TODO: adjust size of the reviews forms->-->
 

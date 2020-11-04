@@ -18,3 +18,10 @@
   text-align: left;
 
 }
+
+.show-link a {
+  text-decoration: none;
+  &:hover {
+    font-weight: bold;
+  }
+}

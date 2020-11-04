@@ -7,17 +7,21 @@
   <!--  Right navigation-->
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <%= link_to image_tag("logo-cocktail.png", alt: "Mr Cocktail", width: 50, height: 50), root_path, class: "navbar-brand" %>
-    <%= link_to "Mr Cocktail", root_path, class: "navbar-brand"%>
-    </a>
+    <h1>
+      <%= link_to "Mr Cocktail", root_path, class: "navbar-brand"%>
+    </h1>
   </div>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <%= form_tag(root_path, method: :get, class: 'form-inline ml-auto mr-3') do %>
-      <%= text_field_tag :query, "", placeholder: "Search", class: 'form-control mr-sm-2' %>
-      <%= submit_tag "Search", class: 'btn btn-outline-secondary my-2 my-sm-0' %>
+    <%= form_tag(root_path, method: :get, class: 'form-inline ml-auto mr-3 form-navbar') do %>
+      <%= text_field_tag :query, "", placeholder: "I'm looking for...", class: 'form-control mr-sm-2' %>
+      <%= submit_tag "Search", class: 'btn btn-sm btn-outline-secondary my-2 my-sm-0' %>
     <% end %>
   </div>
 
-  <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-secondary" %>
+  <h2>
+    <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-sm btn-secondary" %>
+  </h2>
+
 
 </nav>
 
@@ -29,3 +33,5 @@
 <!--      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>-->
 <!--    </form>-->
 <!--  </div>-->
+
+
