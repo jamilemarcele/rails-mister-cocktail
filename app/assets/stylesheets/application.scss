@@ -11,3 +11,51 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: 'Libre Baskerville', serif;
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+h1 {
+  font-size: 56px;
+  font-family: 'Libre Baskerville', serif;
+}
+
+h2 {
+  font-size: 42px;
+  font-family: 'Libre Baskerville', serif;
+}
+
+h3 {
+  font-size: 31px;
+  font-family: 'Libre Baskerville', serif;
+}
+
+p {
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0.8;
+}
+
+h4 {
+  font-size: 20px;
+  font-family: 'Libre Baskerville', serif;
+}
+
+label {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0.8;
+}
+
+input {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+}

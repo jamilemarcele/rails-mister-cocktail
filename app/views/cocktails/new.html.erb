@@ -1,16 +1,21 @@
+<%= render 'components/navbar-new' %>
+
+<div class="new-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1568657957812-dddc0ce91c02?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80')">
+  <div class="banner-text">
+    <h1>Creat a cocktail</h1>
+  </div>
+</div>
 
 <div class="container">
-  <h1 class="text-center mt-4">Creat a cocktail</h1>
-  <div class="new-form">
+  <h4 class="mt-4" style="opacity: 0.8">It's time to be creative and create your own cocktail!</h4>
+
+  <div class="new-form mt-4">
     <%= simple_form_for(@cocktail) do |f| %>
       <%= f.input :name %>
       <%= f.input :photo, as: :file %>
       <%= f.submit class: 'btn btn-dark' %>
     <% end %>
-
-
   </div>
-  <%#= link_to "All cocktails", root_path %>
 </div>
 
 

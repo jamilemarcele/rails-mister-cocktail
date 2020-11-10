@@ -12,7 +12,19 @@
   display: flex;
   background-position: center;
   background-size: cover;
-  height: 400px;
+  height: 55vh;
+  color: #eee;
+  text-align: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.new-banner {
+  display: flex;
+  background-position: center;
+  background-size: cover;
+  height: 25vh;
   color: #eee;
   text-align: center;
   align-items: center;

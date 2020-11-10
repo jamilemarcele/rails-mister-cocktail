@@ -9,7 +9,7 @@
   </div>
 </div>
 
-<h2 class="cocktail-header mb-3 mt-3" style="color: #39311d">All Cocktails</h2>
+<h2 class="cocktail-header mb-4 mt-4" style="color: #39311d">All Cocktails</h2>
 
 <p> <%= @no_cocktails_found %></p>
 
@@ -20,7 +20,9 @@
         <div class="card text-center">
           <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, crop: :fill unless cocktail.photo.blank? %>')">
             <div class="cocktail-card-text">
-              <%= link_to cocktail.name, cocktail_path(cocktail) %>
+              <%= link_to cocktail_path(cocktail) do %>
+                <p> <%= cocktail.name %></p>
+                <% end %>
             </div>
           </div>
         </div>

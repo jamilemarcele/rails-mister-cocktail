@@ -35,7 +35,7 @@
     </div>
 
     <div class="text-left col-12 col-lg-8 my-4">
-      <h3>Reviews:</h3>
+      <h3 class="mb-4">Reviews</h3>
 
       <% if @cocktail.reviews.empty? %>
         <p class="my-4">There are no reviews for this cocktail yet. Feel free to add one!</p>
@@ -48,7 +48,7 @@
         </div>
       <% end %>
       <br>
-      <h5 class="mt-4">Add a review</h5>
+      <h4 class="my-4">Add a review</h4>
       <%= render 'reviews/form' %>
     </div>
   </div>

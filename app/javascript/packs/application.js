@@ -22,18 +22,19 @@ import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { loadDynamicBannerText } from '../components/banner';
 import { initSweetalert } from '../plugins/init_sweetalert';
 
-//JS for transparent and white banner
+//JS for the home page banner
 document.addEventListener('turbolinks:load', () => {
     // Call your JS functions here
     // [...]
     loadDynamicBannerText();
 });
 
-//JS for the home banner
+//JS for transparent and white banner
 document.addEventListener('turbolinks:load', () => {
     // Call your JS functions here
     initUpdateNavbarOnScroll();
 });
+
 
 // JS Sweet Alert for delete message
 initSweetalert('#sweet-alert-demo', {
