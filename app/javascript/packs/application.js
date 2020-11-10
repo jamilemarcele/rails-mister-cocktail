@@ -18,9 +18,11 @@ require("channels")
 
 import 'bootstrap';
 
-//JS for transparent and white banner
+import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { loadDynamicBannerText } from '../components/banner';
+import { initSweetalert } from '../plugins/init_sweetalert';
 
+//JS for transparent and white banner
 document.addEventListener('turbolinks:load', () => {
     // Call your JS functions here
     // [...]
@@ -28,9 +30,19 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 //JS for the home banner
-import { initUpdateNavbarOnScroll } from '../components/navbar';
-
 document.addEventListener('turbolinks:load', () => {
     // Call your JS functions here
     initUpdateNavbarOnScroll();
+});
+
+// JS Sweet Alert for delete message
+initSweetalert('#sweet-alert-demo', {
+    title: "Are you sure?",
+    text: "This action cannot be reversed",
+    icon: "warning"
+}, (value) => {
+    if (value) {
+        const link = document.querySelector('#delete-link');
+        link.click();
+    }
 });

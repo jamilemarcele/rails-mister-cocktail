@@ -4,10 +4,10 @@ class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
     @query = params[:query]
-    # TODO: check code query
+    # TODO: check code query  if @cocktails.present?
 
     if @query
-      @cocktails = Cocktail.where("LOWER(name) LIKE '%#{@query.downcase}%'")
+      @cocktails = Cocktail.where("name ILIKE ?", @query.downcase)
       if @cocktails.count.zero?
         @no_cocktails_found = "Sorry, no cocktails found 🙁🍹🍸"
         @cocktails = Cocktail.all
