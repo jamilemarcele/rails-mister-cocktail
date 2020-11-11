@@ -5,7 +5,10 @@
   </button>
   <div class="collapse navbar-collapse justify-content-between" id="navbarTogglerDemo01">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <h4>Mr Cocktail</h4>
+      <div class="d-flex align-items-end">
+        <%= image_tag "logo-cocktail.png", alt: "Mr Cocktail", width: 50, height: 50, class: "navbar-brand" %>
+        <h4> Mr Cocktail </h4>
+      </div>
     <% end %>
 
   <!--  Right navigation-->

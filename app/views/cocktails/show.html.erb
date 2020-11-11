@@ -11,15 +11,15 @@
       <ul>
         <% @cocktail.doses.each do |dose|%>
           <li>
-            <%= dose.description %>
-            <%= dose.ingredient.name %>
+            <p> <%= dose.description %> <%= dose.ingredient.name %>
+
             <%#= link_to dose_path(dose), method: :delete, data: {confirm: "Are you sure?"} do %>
 <!--              <i class="far fa-trash-alt"></i>-->
             <%# end %>
 
             <button id="sweet-alert-demo" class="btn btn-danger btn-sm">Delete</button>
             <%= link_to "", dose_path(dose), method: :delete, id: "delete-link", class: "hidden" %>
-
+            </p>
           </li>
         <% end %>
       </ul>
@@ -55,12 +55,10 @@
 
 </div>
 
-<hr>
 <%#= button_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"}%>
-<%= link_to "All cocktails", root_path, class: "show-link"%>
+<%#= link_to "All cocktails", root_path, class: "show-link"%>
 <%#= link_to "Add dose", new_cocktail_dose_path(@cocktail) %>
 
-<!--TODO: responsiveness of the recipe and add ingredient. ROW not working correctly->-->
 <!--TODO: adjust all font sizes and font family ->-->
 <!--TODO: add sweet alert JS to delete action ->-->
 <!--TODO: adjust size of the reviews forms->-->

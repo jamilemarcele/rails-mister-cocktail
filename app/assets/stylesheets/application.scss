@@ -23,6 +23,16 @@ a {
   }
 }
 
+a i {
+  font-size: 2rem;
+  padding: 8px;
+  opacity: 0.8;
+  &:hover {
+    color: #7e7474;
+    text-decoration: none;
+  }
+}
+
 h1 {
   font-size: 3.157rem;
   font-family: 'Libre Baskerville', serif;
@@ -59,3 +69,4 @@ input {
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
 }
+
