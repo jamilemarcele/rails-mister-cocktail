@@ -1,6 +1,6 @@
 .dose-form {
   text-align: left;
-  width: 350px;
+  width: 90%;
 }
 
 .new-form {
@@ -9,12 +9,18 @@
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
-  width: 350px;
+  width: 60%;
+}
+
+.review-form {
+  text-align: left;
+  width: 80%;
 }
 
 .form-navbar input::placeholder {
   font-size: 13px;
 }
+
 label, input {
   font-family: Libre Baskerville, serif;
   font-size: 13px;
