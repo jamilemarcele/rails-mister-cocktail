@@ -1,10 +1,11 @@
 <!--  Left navigation-->
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
-  <h4>
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag("logo-cocktail.png", alt: "Mr Cocktail", width: 50, height: 50) %> Mr Cocktail
-    <% end %>
-  </h4>
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <div class="d-flex align-items-end">
+      <%= image_tag "logo-cocktail.png", alt: "Mr Cocktail", width: 50, height: 50, class: "navbar-brand" %>
+      <h4> Mr Cocktail </h4>
+    </div>
+  <% end %>
 
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +16,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
-        <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-sm btn-secondary"%>
+        <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-dark"%>
       </li>
     </ul>
   </div>
