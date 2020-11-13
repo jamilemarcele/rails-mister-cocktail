@@ -1,6 +1,6 @@
 .dose-form {
   text-align: left !important;
-  width: 90%;
+  width: 100%;
 }
 
 .new-form {
@@ -18,10 +18,5 @@
 }
 
 .form-navbar input::placeholder {
-  font-size: 13px;
-}
-
-label, input {
-  font-family: Libre Baskerville, serif;
   font-size: 13px;
 }
