@@ -38,19 +38,24 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 
-// JS Sweet Alert for delete message
-initSweetalert('#sweet-alert-demo', {
-    title: "Are you sure?",
-    text: "This action cannot be reversed",
-    icon: "warning"
-}, (value) => {
-    if (value) {
-        const link = document.querySelector('#delete-link');
-        link.click();
-    }
-});
 
 // JS select2 form
 document.addEventListener("turbolinks:load", function() {
     initSelect2();
+});
+
+// JS Sweet Alert for delete message
+document.addEventListener("turbolinks:load", function() {
+    initSweetalert('#sweet-alert-demo', {
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    }, (value) => {
+        if (value) {
+            const link = document.querySelector('#delete-link');
+            link.click();
+        }
+    });
 });
