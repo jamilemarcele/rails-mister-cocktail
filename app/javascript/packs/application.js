@@ -37,8 +37,6 @@ document.addEventListener('turbolinks:load', () => {
     initUpdateNavbarOnScroll();
 });
 
-
-
 // JS select2 form
 document.addEventListener("turbolinks:load", function() {
     initSelect2();
@@ -48,7 +46,7 @@ document.addEventListener("turbolinks:load", function() {
 document.addEventListener("turbolinks:load", function() {
     initSweetalert('#sweet-alert-demo', {
         title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover this imaginary file!",
+        text: "Once deleted, you will not be able to recover it!",
         icon: "warning",
         buttons: true,
         dangerMode: true,

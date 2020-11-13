@@ -18,7 +18,7 @@
 a {
   text-decoration: none;
   color: inherit;
-  font-family: 'Libre Baskerville', serif;
+  font-family: $headers-font;
   &:hover {
     color: inherit;
     text-decoration: none;
@@ -37,38 +37,38 @@ a i {
 
 h1 {
   font-size: 3.157rem;
-  font-family: 'Libre Baskerville', serif;
+  font-family: $headers-font;
 }
 
 h2 {
   font-size: 42px;
-  font-family: 'Libre Baskerville', serif;
+  font-family: $headers-font;
 }
 
 h3 {
   font-size: 31px;
-  font-family: 'Libre Baskerville', serif;
+  font-family: $headers-font;
 }
 
 p {
   font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $body-font;
   opacity: 0.8;
 }
 
 h4 {
   font-size: 24px;
-  font-family: 'Libre Baskerville', serif;
+  font-family: $headers-font;
 }
 
 label {
   font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Merriweather', serif;
   opacity: 0.8;
 }
 
 input {
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Merriweather', serif;
 }
 
