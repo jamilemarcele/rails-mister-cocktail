@@ -45,11 +45,12 @@ document.addEventListener("turbolinks:load", function() {
 // JS Sweet Alert for delete message
 document.addEventListener("turbolinks:load", function() {
     initSweetalert('#sweet-alert', {
-        title: "Are you sure?",
+        title: "Are you sure? 🤔",
         text: "Once deleted, you will not be able to recover it!",
         icon: "warning",
         buttons: true,
         dangerMode: true,
+        closeOnClickOutside: false,
     }, (value) => {
             if (value) {
                 const link = document.querySelector('#delete-link');
