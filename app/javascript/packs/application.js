@@ -21,6 +21,8 @@ import 'bootstrap';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { loadDynamicBannerText } from '../components/banner';
 import { initSweetalert } from '../plugins/init_sweetalert';
+import { initSelect2 } from '../plugins/init_select2';
+
 
 //JS for the home page banner
 document.addEventListener('turbolinks:load', () => {
@@ -46,4 +48,9 @@ initSweetalert('#sweet-alert-demo', {
         const link = document.querySelector('#delete-link');
         link.click();
     }
+});
+
+// JS select2 form
+document.addEventListener("turbolinks:load", function() {
+    initSelect2();
 });
