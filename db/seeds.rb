@@ -11,7 +11,7 @@ require 'open-uri'
 require 'json'
 require 'httparty'
 
-puts "Cleaning database..."
+puts 'Cleaning database...'
 Cocktail.destroy_all
 Ingredient.destroy_all
 
@@ -24,34 +24,42 @@ puts 'Starting seed 🌱'
 #   Ingredient.create(name: obj["strIngredient1"])
 # end
 
-
 # Here I'm getting all cocktails to be able to get the cocktail id
+
 response = HTTParty.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
 cocktails = response.parsed_response['drinks']
 
 # Iterating through the 'drinks' array and access the cocktail using the ID
-all_cocktails = []
+
 cocktails[0..2].each do |c|
   c_id = c['idDrink']
   cocktail_response = HTTParty.get("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=#{c_id}")
   cocktail_by_id = cocktail_response.parsed_response['drinks'][0]
+
   name = cocktail_by_id['strDrink']
-  description = cocktail_by_id['strMeasure1']
-  ingredient = cocktail_by_id['strIngredient1']
 
   photo = URI.open(c['strDrinkThumb'])
-
   cocktail = Cocktail.create!(name: name)
   cocktail.photo.attach(io: photo, filename: "#{name}.jpeg", content_type: 'image/jpeg')
-  all_cocktails << cocktail
 
-  cocktail_ingredient = Ingredient.create!(name: ingredient)
+  (1..15).each { |i|
+    ingredient = cocktail_by_id["strIngredient#{i}"]
+    description = cocktail_by_id["strMeasure#{i}"]
 
-  Dose.create!(
-    description: description,
-    ingredient: cocktail_ingredient,
-    cocktail: cocktail
-  )
+    next unless ingredient && ingredient != ''
+
+    cocktail_ingredient = Ingredient.create!(name: ingredient) unless Ingredient.find_by name: ingredient
+
+    next unless description && description != ''
+
+    # next if Dose.find_by description: description
+
+    Dose.create!(
+      description: description,
+      cocktail: cocktail,
+      ingredient: cocktail_ingredient
+    )
+  }
 end
 
 puts 'Finished seeding file 😀'
