@@ -30,8 +30,7 @@ response = HTTParty.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?
 cocktails = response.parsed_response['drinks']
 
 # Iterating through the 'drinks' array and access the cocktail using the ID
-
-cocktails[0..2].each do |c|
+cocktails[0..10].each do |c|
   c_id = c['idDrink']
   cocktail_response = HTTParty.get("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=#{c_id}")
   cocktail_by_id = cocktail_response.parsed_response['drinks'][0]
@@ -42,24 +41,25 @@ cocktails[0..2].each do |c|
   cocktail = Cocktail.create!(name: name)
   cocktail.photo.attach(io: photo, filename: "#{name}.jpeg", content_type: 'image/jpeg')
 
-  (1..15).each { |i|
+  (1..15).each do |i|
     ingredient = cocktail_by_id["strIngredient#{i}"]
-    description = cocktail_by_id["strMeasure#{i}"]
 
     next unless ingredient && ingredient != ''
 
-    cocktail_ingredient = Ingredient.create!(name: ingredient) unless Ingredient.find_by name: ingredient
+    cocktail_ingredient = if !Ingredient.find_by name: ingredient
+                            Ingredient.create!(name: ingredient)
+                          else
+                            Ingredient.find_by name: ingredient
+                          end
 
-    next unless description && description != ''
-
-    # next if Dose.find_by description: description
+    description = cocktail_by_id["strMeasure#{i}"] || '.'
 
     Dose.create!(
       description: description,
       cocktail: cocktail,
       ingredient: cocktail_ingredient
     )
-  }
+  end
 end
 
 puts 'Finished seeding file 😀'
