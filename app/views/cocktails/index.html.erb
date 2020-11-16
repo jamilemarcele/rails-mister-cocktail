@@ -11,12 +11,12 @@
 
 <h2 class="cocktail-header mb-4 mt-4 text-center" style="color: #39311d">All Cocktails</h2>
 
-<p> <%= @no_cocktails_found %></p>
+<p class="text-center"> <%= @no_cocktails_found %></p>
 
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-4 mb-4">
         <div class="card text-center">
           <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, crop: :fill unless cocktail.photo.blank? %>')">
             <div class="cocktail-card-text">

@@ -11,7 +11,7 @@
   color: #eee;
   align-items: center;
   background-repeat: no-repeat;
-  height: 250px;
+  height: 400px;
 }
 .cocktail-card-text {
   margin: 0 auto;
@@ -23,6 +23,12 @@
   &:hover {
     font-weight: bold;
   }
+}
+
+.cocktail-card-text p {
+  font-size: 22px;
+  font-family: $body-font;
+  opacity: 0.8;
 }
 
 .card-review {

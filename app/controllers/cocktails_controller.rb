@@ -6,9 +6,9 @@ class CocktailsController < ApplicationController
     @query = params[:query]
     # TODO: check code query  if @cocktails.present?
 
-    if @query
-      @cocktails = Cocktail.where("name ILIKE ?", @query.downcase)
-      if @cocktails.count.zero?
+    if @query.present?
+      @cocktails = Cocktail.where("name ILIKE ?", "%#{@query}%")
+      unless @cocktails.exists?
         @no_cocktails_found = "Sorry, no cocktails found 🙁🍹🍸"
         @cocktails = Cocktail.all
       end

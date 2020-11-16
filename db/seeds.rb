@@ -30,7 +30,7 @@ response = HTTParty.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?
 cocktails = response.parsed_response['drinks']
 
 # Iterating through the 'drinks' array and access the cocktail using the ID
-cocktails[0..10].each do |c|
+cocktails[0..100].each do |c|
   c_id = c['idDrink']
   cocktail_response = HTTParty.get("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=#{c_id}")
   cocktail_by_id = cocktail_response.parsed_response['drinks'][0]
