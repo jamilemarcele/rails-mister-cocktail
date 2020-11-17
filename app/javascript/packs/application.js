@@ -27,13 +27,11 @@ import { initSelect2 } from '../plugins/init_select2';
 //JS for the home page banner
 document.addEventListener('turbolinks:load', () => {
     // Call your JS functions here
-    // [...]
     loadDynamicBannerText();
 });
 
 //JS for transparent and white banner
 document.addEventListener('turbolinks:load', () => {
-    // Call your JS functions here
     initUpdateNavbarOnScroll();
 });
 

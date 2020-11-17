@@ -16,16 +16,14 @@
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-12 col-sm-4 mb-4">
-        <div class="card text-center">
+      <div class="col-xs-12 col-sm-6 col-lg-4 mb-4">
+        <%= link_to cocktail_path(cocktail), class: "card-links" do %>
           <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, crop: :fill unless cocktail.photo.blank? %>')">
             <div class="cocktail-card-text">
-              <%= link_to cocktail_path(cocktail) do %>
-                <p> <%= cocktail.name %></p>
-                <% end %>
+              <p> <%= cocktail.name %></p>
             </div>
           </div>
-        </div>
+        <% end %>
       </div>
     <% end %>
   </div>
