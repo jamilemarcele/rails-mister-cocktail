@@ -7,10 +7,26 @@
   background: transparent;
   box-shadow: 0 0 0 0;
   transition: 0.4s background-color ease;
+
+  h4 {
+    color: #ffff !important;
+  }
+
+  img {
+    filter: invert(1%) sepia(1%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(80%);
+  }
 }
 
 .navbar-lewagon-white {
   background-color: white;
+
+  h4 {
+    color: #000000 !important;
+  }
+
+  img {
+    filter: none;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
