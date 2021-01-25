@@ -14,6 +14,8 @@ require 'httparty'
 puts 'Cleaning database...'
 Cocktail.destroy_all
 Ingredient.destroy_all
+Recipe.destroy_all
+Dose.destroy_all
 
 puts 'Starting seed 🌱'
 
@@ -30,14 +32,15 @@ response = HTTParty.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?
 cocktails = response.parsed_response['drinks']
 
 # Iterating through the 'drinks' array and access the cocktail using the ID
-cocktails[0..100].each do |c|
+cocktails[0..10].each do |c|
   c_id = c['idDrink']
   cocktail_response = HTTParty.get("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=#{c_id}")
   cocktail_by_id = cocktail_response.parsed_response['drinks'][0]
 
   name = cocktail_by_id['strDrink']
-
+  instruction = cocktail_by_id['strInstructions']
   photo = URI.open(c['strDrinkThumb'])
+
   cocktail = Cocktail.create!(name: name)
   cocktail.photo.attach(io: photo, filename: "#{name}.jpeg", content_type: 'image/jpeg')
 
@@ -60,6 +63,11 @@ cocktails[0..100].each do |c|
       ingredient: cocktail_ingredient
     )
   end
+
+  Recipe.create!(
+    cocktail: cocktail,
+    instruction: instruction
+  )
 end
 
 puts 'Finished seeding file 😀'
