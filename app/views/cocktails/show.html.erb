@@ -34,22 +34,30 @@
         </p>
       </div>
     </div>
+  </div>
 
-    <div class="text-left col-12 col-lg-8 my-4" >
+  <div class="row">
+
+    <div class="col-12 col-lg-8 mb-4">
+      <h3 class="mt-4 mb-4">How to prepare it</h3>
+      <p><%= @cocktail.recipe.instruction %></p>
+    </div>
+
+    <div class="text-left col-12 col-lg-4 my-4" >
       <h3 class="mb-4">
         <%= pluralize @cocktail.reviews.size, "Review" %>
       </h3>
 
       <% if @cocktail.reviews.empty? %>
         <p class="my-4">There are no reviews for this cocktail yet. Feel free to add one!</p>
-      <% end %>
+    <% end %>
 
       <%  @cocktail.reviews.each do |review| %>
         <div class="card-review mt-2">
           <p class="p-1"> <%= review.name %> - Rating: <%= ("<i class=\"fas fa-star\"></i>" * review.rating).html_safe %></p>
           <p class="p-1"> <%= review.content %> </p>
         </div>
-      <% end %>
+    <% end %>
       <br>
       <h4 class="my-4">Add a review</h4>
       <%= render 'reviews/form' %>
